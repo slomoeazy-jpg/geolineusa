@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery</title>
+  <title>Twin Treats | Catering & Food Truck Dallas, TX</title>
   <style>
     body {
       margin: 0;
@@ -15,7 +15,7 @@
     header {
       height: 100vh;
       background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=80');
+        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1800&q=80');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -27,28 +27,79 @@
     }
 
     header .hero-content {
-      max-width: 700px;
+      max-width: 720px;
     }
 
     header h1 {
       margin: 0;
-      font-size: clamp(2.75rem, 6vw, 5rem);
-      line-height: 1;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 1.05;
       letter-spacing: -0.05em;
     }
 
     header p {
-      margin: 1.25rem auto 0;
-      max-width: 32rem;
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.8;
+      margin: 1.5rem auto 0;
+      max-width: 34rem;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.75;
+    }
+
+    .hero-subtitle {
+      margin: 1.5rem auto 0;
+      font-size: 1.05rem;
+      max-width: 38rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.75;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 16px 38px;
+      background: #d62828;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #b32424;
     }
 
     .page-wrapper {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 3rem 1.5rem 4rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .intro h2 {
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      margin-bottom: 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    .intro h3 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: #d62828;
+      line-height: 1.4;
+    }
+
+    .intro p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #334155;
     }
 
     .section-title {
@@ -56,50 +107,254 @@
       margin: 0 0 1.5rem;
       letter-spacing: -0.03em;
       font-weight: 700;
+      color: #111827;
+      text-align: center;
+    }
+
+    .features,
+    .why-choose,
+    .gallery {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .features {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-bottom: 3rem;
+    }
+
+    .feature-card,
+    .why-card {
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(15, 23, 42, 0.05);
+    }
+
+    .feature-card h3,
+    .why-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.85rem;
+      color: #d62828;
+      font-size: 1.3rem;
+    }
+
+    .feature-card p,
+    .why-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .feature-list li {
+      color: #334155;
+      font-weight: 600;
+    }
+
+    .feature-list li::before {
+      content: '✔';
+      margin-right: 0.75rem;
+      color: #16a34a;
     }
 
     .gallery {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .gallery img {
       width: 100%;
-      height: 100%;
-      min-height: 220px;
+      height: 320px;
       object-fit: cover;
-      border-radius: 1rem;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-      transition: transform 0.25s ease, filter 0.25s ease;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .gallery img:hover {
-      transform: translateY(-4px) scale(1.01);
-      filter: saturate(1.05);
+      transform: translateY(-4px);
+      box-shadow: 0 26px 55px rgba(15, 23, 42, 0.14);
+    }
+
+    .why-choose {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin: 2rem 0 3rem;
+    }
+
+    .contact {
+      background: #111827;
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 24px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact h2,
+    .contact p,
+    .contact a {
+      margin: 0.75rem 0;
+    }
+
+    .contact a {
+      color: #f8fafc;
+      text-decoration: underline;
+    }
+
+    .contact p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .quote-note {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #334155;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="hero-content">
-      <h1>Fresh flavors for every moment</h1>
-      <p>Discover a curated gallery of delicious food truck dishes, street eats, and catering inspiration set against a bold hero background.</p>
+      <h1>Twin Treats</h1>
+      <p class="hero-subtitle">
+        Premium Catering & Food Truck Experiences Across Dallas-Fort Worth
+      </p>
+      <p>
+        Fresh Pizza • Artisan Ice Cream • Mediterranean Cuisine
+        Bringing unforgettable flavors to corporate events, private celebrations, festivals, schools, weddings, and community gatherings throughout the Dallas-Fort Worth Metroplex.
+      </p>
+      <a href="#contact" class="btn">Request Catering</a>
     </div>
   </header>
 
   <div class="page-wrapper">
+    <section class="intro">
+      <h2>Premium Catering & Food Truck Experiences Across Dallas-Fort Worth</h2>
+      <h3>Fresh Pizza • Artisan Ice Cream • Mediterranean Cuisine</h3>
+      <p>
+        Bringing unforgettable flavors to corporate events, private celebrations, festivals, schools, weddings, and community gatherings throughout the Dallas-Fort Worth Metroplex.
+      </p>
+      <p>
+        <strong>Twin Treats</strong> delivers a unique culinary experience by combining handcrafted pizza, premium ice cream treats, and authentic Mediterranean favorites from our modern catering and food truck operation.
+      </p>
+    </section>
+
     <section>
-      <h2 class="section-title">Gallery</h2>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1619740455993-f5f4a4a5d6f6?auto=format&fit=crop&w=1200&q=80" alt="Twin Treats Food Truck" />
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80" alt="Fresh Pizza" />
-        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1200&q=80" alt="Ice Cream" />
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Mediterranean Cuisine" />
-        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80" alt="Catering Event" />
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Food Truck Catering" />
+      <h2 class="section-title">Catering for Every Occasion</h2>
+      <div class="feature-card">
+        <p>
+          Whether you're planning a corporate lunch, employee appreciation event, wedding reception, birthday celebration, school function, or community festival, Twin Treats offers flexible catering solutions tailored to your event.
+        </p>
+      </div>
+      <ul class="feature-list">
+        <li>Corporate Events</li>
+        <li>Private Parties</li>
+        <li>Weddings</li>
+        <li>School Functions</li>
+        <li>Community Festivals</li>
+        <li>Employee Appreciation Events</li>
+        <li>Grand Openings</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">What We Serve</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h3>Wood-fired style pizza</h3>
+          <p>Signature handcrafted pizzas with fresh toppings and bold flavors.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Gourmet ice cream creations</h3>
+          <p>Creamy, handcrafted ice cream made for every celebration and sweet craving.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Mediterranean platters</h3>
+          <p>Fresh, flavorful Mediterranean dishes perfect for diverse event menus.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Catering setup at events</h3>
+          <p>Professional presentation and service designed to elevate your event.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Modern food truck exterior</h3>
+          <p>A polished and memorable presentation that draws guests in.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Fresh ingredients and preparation</h3>
+          <p>Quality-driven recipes featuring seasonal ingredients and careful preparation.</p>
+        </div>
       </div>
     </section>
+
+    <section>
+      <h2 class="section-title">Photo Gallery</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80" alt="Modern Food Truck Serving Fresh Pizza" />
+        <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=1200&q=80" alt="Food Truck Pizza" />
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1200&q=80" alt="Ice Cream Dessert" />
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80" alt="Catering Event Meal" />
+        <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=1200&q=80" alt="Mediterranean Plate" />
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Food Truck Catering Service" />
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Why Choose Twin Treats</h2>
+      <div class="why-choose">
+        <div class="why-card">
+          <h3>Quality Ingredients</h3>
+          <p>We focus on fresh ingredients and consistent quality for every event.</p>
+        </div>
+        <div class="why-card">
+          <h3>Versatile Cuisine</h3>
+          <p>Pizza, ice cream, and Mediterranean specialties provide something for every guest.</p>
+        </div>
+        <div class="why-card">
+          <h3>Professional Catering Experience</h3>
+          <p>Reliable service and attention to detail help ensure successful events throughout Dallas-Fort Worth.</p>
+        </div>
+        <div class="why-card">
+          <h3>Flexible Event Options</h3>
+          <p>From intimate gatherings to large-scale corporate functions, our team can accommodate a variety of event sizes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Twin Treats</h2>
+      <p><strong>Phone:</strong> 214-316-1733</p>
+      <p><strong>Email:</strong> <a href="mailto:anas@geolineusa.com">anas@geolineusa.com</a></p>
+      <p><strong>Service Area:</strong> Dallas, Texas and surrounding DFW communities</p>
+    </section>
+
+    <section class="quote-note">
+      <h2>Request a Catering Quote</h2>
+      <p>Planning an event? Contact Twin Treats today to discuss catering availability, event details, and customized food options.</p>
+    </section>
   </div>
+
+  <footer>
+    © 2026 Twin Treats. All Rights Reserved.
+  </footer>
 </body>
 </html>
